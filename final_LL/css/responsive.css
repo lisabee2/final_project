@@ -1,0 +1,174 @@
+nav {}
+
+.hamburger {
+    margin-top: 0;
+    margin-left: 40%;
+    width: 7%;
+    display: none;
+    float: left;
+    cursor: pointer;
+}
+
+.line {
+    height: 0.3rem;
+    background: #f8ff00;
+    border-radius: 5px;
+    margin: 0.4rem;
+    width: 90%;
+}
+
+@media screen and (max-width: 768px) {
+    header.show {
+        height: 250px;
+        width: 100%;
+        max-width: 768px;
+    }
+    header {
+        width: 100%;
+        max-width: 768px;
+    }
+    .hamburger {
+        display: block;
+    }
+    nav.show {
+        display: block;
+        clear: both;
+        height: inherit;
+        overflow: hidden;
+        transition: height 500ms ease;
+        top: 70px;
+        position: absolute;
+    }
+    nav ul {
+        display: none;
+    }
+    .show {
+        height: calc((1.1em + 5px + 3px)* 4);
+        /*margin: 0px auto;*/
+        width: 100%;
+    }
+    nav.show ul {
+        display: block;
+        /*width: 100%;*/
+    }
+    nav.show ul li a {
+        color: #f8ff00;
+        font-size: 18px;
+    }
+    nav.show li {
+        display: block;
+        clear: both;
+        text-align: center;
+        /* these properties have been added just to make 
+        the height calculation above more interesting */
+        border-top: 2px solid #fff;
+        padding-top: 1px;
+    }
+    header nav.show ul li {
+        display: block;
+        margin: 0px;
+        font-size: 24px;
+    }
+
+    #main {
+        margin-top: 20px;
+    }
+    #sidebar h3 {
+        font-size: 40px;
+        margin-bottom: 5px;
+        text-align: center;
+    }
+    #sidebar {
+        width: 50%;
+    }
+    #sidebar ul,
+    #sidebar p {
+        margin-left: auto;
+        margin-right: auto;
+        /*        text-align: center;*/
+        width: 50%;
+    }
+    #sidebar li {
+        line-height: 1.2;
+    }
+    #sidebar img {
+        padding-left: 25%;
+    }
+    .readmore {
+        display: none;
+    }
+    #posts {
+        width: 70%;
+        margin-left: 20px;
+    }
+    .post img {
+        width: 500px;
+    }
+    footer {
+        padding: 45px 0 35px;
+    }
+    footer .logo {
+        margin-bottom: 20px;
+    }
+    footer ul li {
+        margin: 0 26px 30px;
+    }
+    /*    These changes are for the index.html page.*/
+    /*
+    #hero {
+    height: 200px;
+    background: url(../images/header_bg.jpg) no-repeat top center #131e27;
+    padding-top: 32px;
+}
+*/
+    #testimonial {
+        background: url(../images/testimonial_bg.jpg) no-repeat top center #071324;
+        padding: 10px 0 10px;
+        color: #fff;
+    }
+    blockquote {
+        font-size: 30px;
+        font-weight: 300;
+        font-style: italic;
+        text-align: center;
+        width: 70%;
+        margin: 0 auto;
+    }
+    .container {
+        width: 768px;
+        margin: 0 auto;
+    }
+    #benefits {
+        padding: 75px 0 80px;
+    }
+    #benefits .container {
+        width: 500px;
+        margin-left: 40px;
+        margin-right: 10px;
+    }
+    #benefits p,
+    #benefits ul {
+        width: 500px;
+        font-size: 30px;
+    }
+    #benefits ul {
+        list-style: disc;
+        margin: 30px 0 0 80px;
+    }
+    #benefits li {
+        font-size: 30px;
+    }
+    #hero .container {
+        width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 40px;
+    }
+    #hero {
+        height: 500px;
+        padding-top: 32px;
+    }
+    #hero h2 {
+        margin: 50px 0 90px;
+    }
+}

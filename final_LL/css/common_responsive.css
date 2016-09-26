@@ -1,0 +1,13 @@
+        @media screen and (max-width: 768px) {
+        .small_image {
+            display: none;
+        }
+/*
+        article p {
+            font-size: 1.0em;
+            margin-left: auto;
+            margin-right: auto;
+            width: 700px;
+            color:#606161;
+            font-weight: 400;
+        }*/

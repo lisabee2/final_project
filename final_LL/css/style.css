@@ -22,6 +22,22 @@
     /* note the padding around a left floated image */
 }
 
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
 html,
 body {
     color: #f0efef;
@@ -29,7 +45,10 @@ body {
     line-height: 1.4;
     color: #606161;
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-    font-weight: 300;
+    font-weight: 500;
+    padding-bottom: 10rem;
+    min-height: 100%;
+    position: relative;
 }
 
 a {
@@ -37,19 +56,32 @@ a {
 }
 
 
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+
+/* Center the container */
+
 .container {
-    width: 80%;
-    margin: 0 auto 0 50px;
+    width: 85%;
+    margin: 0 auto 0 60px;
 }
 
 .logo {
-    width: 180px;
-    height: 180px;
+    width: 160px;
+    height: 160px;
+    margin-left: 75px;
 }
 
 header {
     padding: 25px 0;
     overflow: hidden;
+}
+
+header a img {
+    width: 3em;
+    margin-top: 1em;
 }
 
 header .logo {
@@ -59,199 +91,67 @@ header .logo {
 
 header nav {
     float: right;
-    margin-top: 60px;
+    margin-top: 38px;
 }
 
 header nav ul li {
     display: inline-block;
-    margin: 0 0 0 40px;
-    font-size: 1.2em;
+    margin: 0 0 0 60px;
+    font-size: .70em;
 }
 
-header nav ul li a {
-    color: darkgray;
-}
-
-.button {
-    border-radius: 5px;
-    font-weight: 800;
-    padding: 10px;
-    width: 200px;
-    font-size: .8em;
-    text-align: center;
-    display: block;
-    cursor: hand;
-}
-
-#submitdiv {
-    padding-top: 100px;
-}
-
-form button {
-    padding: 0px;
-    width: 110px;
-}
-
-#findme ul {
-    width: 500px;
-}
-
-#findme p {
-    font-size: .75em;
-}
-
-#findme {
-    border: 2px;
-    border-color: red;
+#commentdiv {
     padding-top: 20px;
-    padding-right: 50px;
-}
-
-#mainsection {
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-}
-
-#contactform {
-    /* Just to center the form  */
-    margin: 0 auto;
-    width: 490px;
-    /* To see the outline of the form */
-    padding: 1em;
-    border: 1px solid #CCC;
-    border-radius: 1em;
-}
-
-form button {
-    margin: 0 auto;
-    font-size: .75em;
-}
-
-form input,
-form textarea,
-#formcheckboxes {
-    margin-top: 6px;
-}
-
-textarea {
-    height: 100px;
-}
-
-form label {
-    font-size: .7em;
-    font-weight: 600;
-    /* To make sure that all labels have the same size and are properly aligned */
-    display: inline-block;
-    width: 110px;
-    text-align: right;
-}
-
-form #interests input[type='checkbox'] {
-    float: right;
-    width: 20px;
-    margin-right: 8px;
-}
-
-form #interests label {
-    float: left;
-    width: 20px;
-    margin: 4px 0 8px 0;
-}
-
-form input,
-form textarea,
-form ul {
-    /* To make sure that all text fields have the same font settings
-       By default, textareas have a monospace font */
-    font: .60em sans-serif;
-    width: 70%;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    border: 1px solid #999;
-}
-
-form ul {
-    float: right;
-}
-
-input:focus,
-textarea:focus {
-    /* To give a little highlight on active elements */
-    border-color: blue;
-}
-
-textarea {
-    /* To properly align multiline text fields with their labels */
-    vertical-align: top;
-    /* To give enough room to type some text */
-    height: 6em;
-}
-
-.checkbox-grid {
-    width: 70%;
-}
-
-.checkbox-grid li {
-    display: block;
-    float: left;
-    width: 30%;
-    margin-left: 7px;
-}
-
-#interests li label {
-    text-align: center;
-    width: 50px;
-}
-
-
-.invalid { /* red thumbs down */
-    -moz-box-shadow: none;
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAeVJREFUeNqkU01oE1EQ/mazSTdRmqSxLVSJVKU9RYoHD8WfHr16kh5EFA8eSy6hXrwUPBSKZ6E9V1CU4tGf0DZWDEQrGkhprRDbCvlpavan3ezu+LLSUnADLZnHwHvzmJlvvpkhZkY7IqFNaTuAfPhhP/8Uo87SGSaDsP27hgYM/lUpy6lHdqsAtM+BPfvqKp3ufYKwcgmWCug6oKmrrG3PoaqngWjdd/922hOBs5C/jJA6x7AiUt8VYVUAVQXXShfIqCYRMZO8/N1N+B8H1sOUwivpSUSVCJ2MAjtVwBAIdv+AQkHQqbOgc+fBvorjyQENDcch16/BtkQdAlC4E6jrYHGgGU18Io3gmhzJuwub6/fQJYNi/YBpCifhbDaAPXFvCBVxXbvfbNGFeN8DkjogWAd8DljV3KRutcEAeHMN/HXZ4p9bhncJHCyhNx52R0Kv/XNuQvYBnM+CP7xddXL5KaJw0TMAF8qjnMvegeK/SLHubhpKDKIrJDlvXoMX3y9xcSMZyBQ+tpyk5hzsa2Ns7LGdfWdbL6fZvHn92d7dgROH/730YBLtiZmEdGPkFnhX4kxmjVe2xgPfCtrRd6GHRtEh9zsL8xVe+pwSzj+OtwvletZZ/wLeKD71L+ZeHHWZ/gowABkp7AwwnEjFAAAAAElFTkSuQmCC);
-    background-position: right top;
-    background-repeat: no-repeat;
-}
-
-.valid { /* green thumbs up */
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAepJREFUeNrEk79PFEEUx9/uDDd7v/AAQQnEQokmJCRGwc7/QeM/YGVxsZJQYI/EhCChICYmUJigNBSGzobQaI5SaYRw6imne0d2D/bYmZ3dGd+YQKEHYiyc5GUyb3Y+77vfeWNpreFfhvXfAWAAJtbKi7dff1rWK9vPHx3mThP2Iaipk5EzTg8Qmru38H7izmkFHAF4WH1R52654PR0Oamzj2dKxYt/Bbg1OPZuY3d9aU82VGem/5LtnJscLxWzfzRxaWNqWJP0XUadIbSzu5DuvUJpzq7sfYBKsP1GJeLB+PWpt8cCXm4+2+zLXx4guKiLXWA2Nc5ChOuacMEPv20FkT+dIawyenVi5VcAbcigWzXLeNiDRCdwId0LFm5IUMBIBgrp8wOEsFlfeCGm23/zoBZWn9a4C314A1nCoM1OAVccuGyCkPs/P+pIdVIOkG9pIh6YlyqCrwhRKD3GygK9PUBImIQQxRi4b2O+JcCLg8+e8NZiLVEygwCrWpYF0jQJziYU/ho2TUuCPTn8hHcQNuZy1/94sAMOzQHDeqaij7Cd8Dt8CatGhX3iWxgtFW/m29pnUjR7TSQcRCIAVW1FSr6KAVYdi+5Pj8yunviYHq7f72po3Y9dbi7CxzDO1+duzCXH9cEPAQYAhJELY/AqBtwAAAAASUVORK5CYII=);
-    background-position: right top;
-    background-repeat: no-repeat;
-    -moz-box-shadow: none;
 }
 
 nav a {
     color: inherit;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
-#emsg { /* error message show when form submitted with invalid fields */
-    font-size: .60em;
-    float: right;
-    color: pink;
-    margin-left: 40px;
+.myinfo {
+    min-width: 50%;
+    margin-top: 1rem;
+    margin-left: 20%;
+    margin-right: 50%;
 }
 
-.noshow { /*used to hide error message */
-   display: none;
-}
-
-.contact { /* contact header */
-    font-weight: 600;
+.myinfo div {
     float: left;
 }
-form { /* form must clear floats to stay intact */
-    clear: both;
+
+.experience {
+    margin-right: 20%;
+    font-size: .7em;
 }
 
-footer {
-    background: darkgrey;
-    padding: 20px 0 20px 0;
-    text-align: center;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+#LLPhoto {
+    width: 75%;
 }
 
-footer ul li {
-    display: inline-block;
+.emphasis {
+    font-weight: 700;
+}
+
+
+.indent {
+    padding-left: 20px;
+}
+
+h4 {
+    font-size: .75em;
+    color: #606161;
+    margin-left: 1.9em;
+    text-decoration: underline;
+}
+
+section div p {
+    font-size: .7em;
+    margin-right: auto;
+    margin-left: 19%;
+}
+
+section div ul li p {
+    width: 90%;
+    font-size: inherit;
 }
